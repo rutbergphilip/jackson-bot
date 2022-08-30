@@ -1,9 +1,4 @@
-import {
-  ActivityType,
-  Client,
-  ClientUser,
-  GatewayIntentBits,
-} from 'discord.js';
+import { ActivityType, Client, GatewayIntentBits } from 'discord.js';
 import { InteractionFactory } from './interactions/interaction.factory';
 import { Setup } from './start/setup.start';
 require('dotenv').config();
@@ -29,9 +24,7 @@ class Main {
       this.client.user?.setActivity('Jacksons uppgifter', {
         type: ActivityType.Watching,
       });
-      console.log(
-        `Ready! Running on account ${this.client.user?.tag || 'unknown'}`
-      );
+      console.log(`Ready! Running on account ${this.client.user?.tag}`);
     });
 
     this.client.on('interactionCreate', async (interaction) => {
