@@ -1,0 +1,16 @@
+export enum AssignmentChoices {
+  HTML = 'html',
+  CSS = 'css',
+  JAVASCRIPT = 'javascript',
+  TYPESCRIPT = 'typescript',
+  REACT = 'react',
+  VUE = 'vue',
+  GITHUB = 'github',
+  MONGODB = 'mongodb',
+  FIREBASE = 'firebase',
+  DYNAMODB = 'dynamodb',
+  MYSQL = 'mysql',
+  POSTGRESQL = 'postgresql',
+  DOCKER = 'docker',
+  KUBERNETES = 'kubernetes',
+}

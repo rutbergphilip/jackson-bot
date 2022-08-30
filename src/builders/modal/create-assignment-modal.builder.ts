@@ -15,6 +15,7 @@ export class CreateAssignmentModal {
     inputId,
     inputPlaceholder,
     inputMinLength,
+    shortInput,
   }: {
     interaction: SelectMenuInteraction;
     title: string;
@@ -23,6 +24,7 @@ export class CreateAssignmentModal {
     inputId: string;
     inputPlaceholder?: string;
     inputMinLength?: number;
+    shortInput?: boolean;
   }): Promise<void> {
     const modal = new ModalBuilder()
       .setTitle(title)
@@ -33,11 +35,14 @@ export class CreateAssignmentModal {
             .setLabel(inputLabel ?? 'Uppgift')
             .setCustomId(inputId)
             .setPlaceholder(
-              inputPlaceholder ?? 'Beskriv din uppgift kortfattat'
+              inputPlaceholder ??
+                'Beskriv din uppgift kortfattat (Du kan bifoga bilder i nästa steg).'
             )
             .setRequired(true)
             .setMinLength(inputMinLength ?? 1)
-            .setStyle(TextInputStyle.Short),
+            .setStyle(
+              shortInput ? TextInputStyle.Short : TextInputStyle.Paragraph
+            ),
         ]),
       ]);
 

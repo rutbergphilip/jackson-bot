@@ -1,5 +1,5 @@
 import { CreateAssignmentEntity } from './../persistence/entities/panels/create-assignment.entity';
-import { CreateAssignmentMenu } from '../interactions/menu/misc/create-assignment.menu';
+import { CreateAssignmentMenu } from '../interactions/menu/assignments/create-assignment.menu';
 import { CreateAssignmentPanelEmbedBuilder } from '../builders/embeds/create-assignment-panel.embed';
 import { Channels } from '../constants/channels.enum';
 import {
@@ -15,7 +15,7 @@ export class Setup {
   private static repository = new GlobalRepository();
   private static message: Message;
 
-  static async applicationsPanelSetup(client: Client) {
+  static async assignmentsPanelSetup(client: Client) {
     const createAssignmentPanel = (await this.repository.getByName(
       'createAssignmentPanel'
     )) as CreateAssignmentEntity;

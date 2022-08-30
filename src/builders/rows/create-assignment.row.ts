@@ -1,7 +1,7 @@
 import { ActionRowBuilder, SelectMenuBuilder } from 'discord.js';
 import { Emojis } from '../../constants/emojis.enum';
 
-export class CreateAssignmentRowBuilder {
+export class CreateAssignmentRow {
   build() {
     return new ActionRowBuilder()
       .addComponents([
@@ -12,38 +12,73 @@ export class CreateAssignmentRowBuilder {
           .addOptions([
             {
               label: 'HTML',
-              value: 'html',
+              value: 'assignment-html',
               emoji: Emojis.HTML,
             },
             {
               label: 'CSS',
-              value: 'css',
+              value: 'assignment-css',
               emoji: Emojis.CSS,
             },
             {
               label: 'JavaScript',
-              value: 'javascript',
+              value: 'assignment-javascript',
               emoji: Emojis.JAVASCRIPT,
             },
             {
               label: 'TypeScript',
-              value: 'typescript',
+              value: 'assignment-typescript',
               emoji: Emojis.TYPESCRIPT,
             },
             {
               label: 'React',
-              value: 'react',
+              value: 'assignment-react',
               emoji: Emojis.REACT,
             },
             {
               label: 'Vue',
-              value: 'vue',
+              value: 'assignment-vue',
               emoji: Emojis.VUE,
             },
             {
               label: 'Github',
-              value: 'guthub',
+              value: 'assignment-github',
               emoji: Emojis.GITHUB,
+            },
+            {
+              label: 'MongoDB',
+              value: 'assignment-mongodb',
+              emoji: Emojis.MONGODB,
+            },
+            {
+              label: 'Firebase',
+              value: 'assignment-firebase',
+              emoji: Emojis.FIREBASE,
+            },
+            {
+              label: 'DynamoDB',
+              value: 'assignment-dynamodb',
+              emoji: Emojis.DYNAMODB,
+            },
+            {
+              label: 'MySQL',
+              value: 'assignment-mysql',
+              emoji: Emojis.MYSQL,
+            },
+            {
+              label: 'PostgreSQL',
+              value: 'assignment-postgresql',
+              emoji: Emojis.POSTGRESQL,
+            },
+            {
+              label: 'Docker',
+              value: 'assignment-docker',
+              emoji: Emojis.DOCKER,
+            },
+            {
+              label: 'Kubernetes',
+              value: 'assignment-kubernetes',
+              emoji: Emojis.KUBERNETES,
             },
           ]),
       ])

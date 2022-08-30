@@ -1,3 +1,3 @@
-import { CreateAssignmentMenu } from './misc/create-assignment.menu';
+import { CreateAssignmentMenu } from './assignments/create-assignment.menu';
 
 export default [new CreateAssignmentMenu()];

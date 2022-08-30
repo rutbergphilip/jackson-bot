@@ -11,8 +11,7 @@ export class CreateAssignmentPanelEmbedBuilder {
         `
 [W3Schools](${HyperLinks.W3SCHOOLS}) - Grundläggande information för HTML, CSS, Javascript m.m.
 
-Välj nedan vad du behöver hjälp med.
-    `
+Välj nedan vad du behöver hjälp med.`
       )
       .toJSON();
   }
