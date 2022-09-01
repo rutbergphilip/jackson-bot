@@ -13,4 +13,5 @@ export enum Emojis {
   POSTGRESQL = '<:postgresql:1014272420896571412>',
   DOCKER = '<:docker:1014269928741818378>',
   KUBERNETES = '<:kubernetes:1014269580631363675>',
+  ARCHIVE = '📁',
 }

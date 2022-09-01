@@ -1,6 +1,6 @@
 import { AssignmentChoices } from '../constants/assignments.enum';
 
-export function formatWord(word: AssignmentChoices) {
+export function formatAssignmentWord(word: AssignmentChoices) {
   if (word === AssignmentChoices.HTML || word === AssignmentChoices.CSS) {
     return word.toUpperCase();
   }

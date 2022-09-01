@@ -1,4 +1,9 @@
-import { ActivityType, Client, GatewayIntentBits } from 'discord.js';
+import {
+  ActivityType,
+  Client,
+  GatewayIntentBits,
+  MessageType,
+} from 'discord.js';
 import { InteractionFactory } from './interactions/interaction.factory';
 import { Setup } from './start/setup.start';
 require('dotenv').config();
@@ -29,6 +34,12 @@ class Main {
 
     this.client.on('interactionCreate', async (interaction) => {
       await new InteractionFactory().run(interaction);
+    });
+
+    this.client.on('messageCreate', (message) => {
+      if (message.type === MessageType.ChannelPinnedMessage) {
+        message.delete();
+      }
     });
 
     this.client.login(process.env.TOKEN).catch((error) => {
