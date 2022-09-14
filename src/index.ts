@@ -22,13 +22,16 @@ class Main {
 
   async run(): Promise<void> {
     this.client.on('ready', async () => {
-      this.client.user?.setActivity('Loading...');
+      // this.client.user?.setActivity('Loading...');
 
       await Setup.assignmentsPanelSetup(this.client);
 
-      this.client.user?.setActivity('Jacksons uppgifter', {
-        type: ActivityType.Watching,
-      });
+      // this.client.user?.
+      // this.client.user?.setActivity('My Core', {
+      //   type: ActivityType.Watching,
+      //   name: 'Core',
+      //   url: 'https://github.com/rutbergphilip/jackson-bot',
+      // });
       console.log(`Ready! Running on account ${this.client.user?.tag}`);
     });
 

@@ -8,6 +8,9 @@ export class ArchiveAssignmentButton implements IButtonInteraction {
     await interaction.deferReply({ ephemeral: true });
     await interaction.guild?.channels.cache.get(interaction.channelId)?.edit({
       parent: Categories.ARCHIVED_ASSIGNMENTS,
+      permissionOverwrites: [
+        
+      ]
     });
     interaction.editReply({
       embeds: [
