@@ -7,7 +7,7 @@ export class AssignmentChoice {
   async run(interaction: SelectMenuInteraction) {
     const [value] = interaction.values;
     const [assignment, choice] = value.split('-');
-    return await new CreateAssignmentModal().build({
+    return new CreateAssignmentModal().build({
       interaction,
       inputId: choice,
       modalId: assignment,
