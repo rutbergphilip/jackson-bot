@@ -1,10 +1,11 @@
-import { CreateUnArchiveAssignmentRow } from '../../../builders/rows/manage-assignment.row';
-import { ButtonInteraction, EmbedBuilder } from 'discord.js';
+import { Users } from './../../../constants/users.enum';
+import { CreateArchiveAssignmentRow } from '../../../builders/rows/manage-assignment.row';
+import { ButtonInteraction, ChannelType, EmbedBuilder } from 'discord.js';
 import { Categories } from '../../../constants/channels.enum';
 import { Colors } from '../../../constants/colors.enum';
 import { IButtonInteraction } from '../../../interfaces/button.interface';
 
-export class ArchiveAssignmentButton implements IButtonInteraction {
+export class UnArchiveAssignmentButton implements IButtonInteraction {
   async run(interaction: ButtonInteraction) {
     await interaction.deferReply({ ephemeral: true });
     const channel =
@@ -12,28 +13,31 @@ export class ArchiveAssignmentButton implements IButtonInteraction {
       (await interaction.guild.channels.fetch(interaction.channelId));
 
     await channel?.edit({
-      parent: Categories.ARCHIVED_ASSIGNMENTS,
+      parent: Categories.ASSIGNMENTS,
       permissionOverwrites: [],
     });
 
     const { embeds } = interaction.message;
     await interaction.message.edit({
       embeds: [...embeds],
-      components: [new CreateUnArchiveAssignmentRow().build()],
+      components: [new CreateArchiveAssignmentRow().build()],
     });
 
     interaction.editReply({
       embeds: [
         new EmbedBuilder()
           .setTitle(interaction.message.embeds[0].title)
-          .setDescription('Uppgiften har arkiverats')
+          .setDescription('Uppgiften har tagits upp från arkiv')
           .setColor(Colors.PRIMARY_GREEN)
           .toJSON(),
       ],
     });
+
+    channel.type === ChannelType.GuildText &&
+      channel.send(`<@${Users.Philip}>`);
   }
 
   getCustomId() {
-    return 'archive-assignment';
+    return 'un-archive-assignment';
   }
 }

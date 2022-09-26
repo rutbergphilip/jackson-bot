@@ -1,5 +1,5 @@
 import { ChannelType, EmbedBuilder, ModalSubmitInteraction } from 'discord.js';
-import { CreateManageAssignmentRow } from '../../../builders/rows/manage-assignment.row';
+import { CreateArchiveAssignmentRow } from '../../../builders/rows/manage-assignment.row';
 import { AssignmentChoices } from '../../../constants/assignments.enum';
 import { Categories } from '../../../constants/channels.enum';
 import { Colors } from '../../../constants/colors.enum';
@@ -44,7 +44,7 @@ export class CreateAssignmentModal implements IModalSubmitInteraction {
               .setTimestamp()
               .toJSON(),
           ],
-          components: [new CreateManageAssignmentRow().build()],
+          components: [new CreateArchiveAssignmentRow().build()],
         })
       )?.pin();
 

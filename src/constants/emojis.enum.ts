@@ -14,4 +14,5 @@ export enum Emojis {
   DOCKER = '<:docker:1014269928741818378>',
   KUBERNETES = '<:kubernetes:1014269580631363675>',
   ARCHIVE = '📁',
+  UN_ARCHIVE = '📂',
 }
